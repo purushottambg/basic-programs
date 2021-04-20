@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<string.h>
+#include<string.h> //functions used to handle the  strings are defined in this headerfile
 #include<conio.h>
 
 void add();
