@@ -1,0 +1,47 @@
+/* In this program we will write a program to calculate a time calculating in second or time convertor hour and minutes in seconds*/
+#include<iostream>
+using namespace std;
+class time1
+{
+    public:
+    int hour;
+    int minute;
+    int second;
+    public:
+    friend istream &operator>>(istream &scan,time1 &t)
+    {
+        scan>>t.hour>>t.minute>>t.second;
+        return scan;
+    }
+    friend ostream &operator<<(ostream &print,time1 &t)
+    {
+        print<<t.hour<<":"<<t.minute<<":"<<t.second;
+        return print;
+    }
+   int operator==(time1 t1)
+   {
+                        int tot = hour * 3600 + minute * 60 + second;
+                        int tot1 = t1.hour * 3600 + t1.minute * 60 + t1.second;
+                        cout<<"\ntotal secondin time 1 is :"
+                        <<tot<<"\ntotal secondin time 2 is : "<<tot1;
+                        if(tot==tot1)
+                                return 1;
+                        else
+                                return 0;
+                }
+};
+int main()
+{
+    time1 t1,t2;
+
+    cout<<"\nEnter the Time 1st: HOUR MINUTE SECOND \n";
+    cin>>t1;
+    cout<<"\nTIME 1: ";
+    cout<<t1;
+
+    cout<<"\nEnter the Time 2nd: HOUR MINUTE SECOND \n";
+    cin>>t2;
+    cout<<"\nTIME 2: ";
+    cout<<t2;
+    t1==t2;
+}
